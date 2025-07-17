@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PartyHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>PartyHub</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">My Tickets</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h2>Upcoming Events</h2>
+        <div class="events">
+            {% for event in events %}
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-title" style="color: var(--neon-blue); text-shadow: 0 0 8px var(--neon-blue), 0 0 16px var(--neon-blue);">{{ event.name }}</div>
+                    <div class="event-detail-row"><span class="icon">📍</span> <b>Location:</b> {{ event.location }}</div>
+                    <div class="event-detail-row"><span class="icon">📅</span> <b>Date:</b> {{ event.date }}</div>
+                    <div class="event-detail-row"><span class="icon">⏰</span> <b>Time:</b> {{ event.time }}</div>
+                </div>
+                <div class="event-body">
+                    <div class="event-caption">{{ event.caption }}</div>
+                    <div class="event-sources"><b>Sources:</b> {{ event.sources }}</div>
+                    <div class="event-days"><b>Days until event:</b> {{ event.days_until }}</div>
+                        {% if event.instagram_url %}
+                        <div class="event-instagram" style="margin-top: 16px; text-align: center;">
+                            <a href="{{ event.instagram_url }}" target="_blank" rel="noopener noreferrer" style="color: #fd44d2; font-weight: bold; text-decoration: underline;">Click here for the ig post</a>
+                        </div>
+                        {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
