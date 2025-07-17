@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PartyHub - Instagram Event Aggregator
 
 This project extracts and displays upcoming events from multiple Instagram accounts, showing them on a web dashboard with links to the original Instagram posts.
@@ -65,3 +66,7 @@ This project extracts and displays upcoming events from multiple Instagram accou
 ---
 
 For questions or contributions, open an issue or pull request! 
+=======
+# PartyHub
+One-stop Flask-based web app to view all party events happening in Kolkata — scraped directly from Instagram.
+>>>>>>> b87ec6fa926e7e06edd7f782b34ac183dc0e5307
